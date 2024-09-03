@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Distribuidora {
+
+    public static double calcularCostoDespacho(double totalCompra, double distanciaKm) {
+        double costoDespacho = 0;
+
+        if (totalCompra >= 50000) {
+            costoDespacho = 0;
+        } else if (totalCompra >= 25000 && totalCompra < 50000) {
+            costoDespacho = distanciaKm * 150;
+        } else {
+            costoDespacho = distanciaKm * 300;
+        }
+
+        return costoDespacho;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingrese el total de su compra:");
+        double totalCompra = scanner.nextDouble();
+
+        System.out.println("Ingrese la distancia del despacho en kilómetros:");
+        double distanciaKm = scanner.nextDouble();
+
+        if (distanciaKm > 20) {
+            System.out.println("Lo sentimos, solo realizamos despachos dentro de un radio de 20 km.");
+        } else {
+            double costoDespacho = calcularCostoDespacho(totalCompra, distanciaKm);
+
+            if (costoDespacho == 0) {
+                System.out.println("Su despacho es gratuito.");
+            } else {
+                System.out.println("El costo de su despacho es: $" + costoDespacho + " pesos.");
+            }
+        }
+
+        scanner.close();
+    }
+}
