@@ -65,6 +65,3 @@ El modelo que ha ingresado es: SAIL
 La cilindrada que ha ingresado es: 1399
 El tipo de combustible es: GASOLINA
 Tiene una capacidad de 5 pasajeros.
-
-
-Resultados obtenidos.
